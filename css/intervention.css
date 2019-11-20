@@ -200,7 +200,7 @@ h2{
 
 form button{
     height:35px;
-    width: 20%;
+    width: 25%;
     text-transform: uppercase;
     color:#003020;
     margin-left: 11rem;
@@ -239,7 +239,7 @@ header #logo{
     
 #sidebar{
     font-size: 12px;
-         width:28%;
+         width:31%;
         text-align: center;
         
         display: inline;
@@ -255,7 +255,7 @@ header #logo{
 
             footer{
     padding:10px;
-    margin-top: 35rem;
+    margin-top: 45rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -295,15 +295,12 @@ header #logo{
     width:50%;
     margin-top:30px;
      border-radius: 5px;
-     position: relative;
-     left: 6.7rem;
+     
+     
 }
 
-
-.red{
-    position: relative;
-    right: 15rem;
-    top: 9rem;
+ 
+    
 }
 /* making humberger menu*/
      header{
