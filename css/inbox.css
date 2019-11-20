@@ -256,9 +256,19 @@ header #logo{
       padding-bottom: 20px;
     } 
     
+    form button{
+    height:35px;
+    width: 30%;
+    text-transform: uppercase;
+    color:#003020;
+    margin-left: 11rem;
+    border-radius:10px;
+    background: #cccccc;
+    font-weight: bold;
+}
 #sidebar{
     font-size: 12px;
-         width:28%;
+         width:31%;
         text-align: center;
         
         display: inline;
@@ -274,7 +284,7 @@ header #logo{
 
             footer{
     padding:10px;
-    margin-top: 35rem;
+    margin-top: 45rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -342,8 +352,8 @@ form .input{
 }
 .red{
     position: relative;
-    right: 17rem;
-    top: 7rem;
+    right: 10rem;
+    top: 12rem;
 }
 /* making humberger menu*/
      header{
