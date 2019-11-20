@@ -69,6 +69,7 @@ header a:hover{
     color:#cccccc;
     cursor: pointer;
 }
+a{ text-decoration:none;}
 header a{
     text-decoration:none;
     color:#ffffff;
