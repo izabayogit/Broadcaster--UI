@@ -159,12 +159,7 @@ button:hover{
        color: #003020;
  }
 
- .intervention span textarea{
-    width:50%;
-    margin-left:5px;
-    margin-top:30px;
-     border-radius: 5px;
-}
+
 
 
  
@@ -174,7 +169,7 @@ a{
 }
  
  .formdiv {
-     display: block;
+     display: inline-block;
      width:70%;
      font-size: 30px;
      
@@ -187,8 +182,7 @@ a{
  }
  span textarea{
     width:50%;
-    margin-left:50px;
-    margin-top:30px;
+    margin-left: 32px;
      border-radius: 5px;
 }
 h2{
@@ -232,7 +226,7 @@ form button{
 
             footer{
     padding:10px;
-    margin-top: 31rem;
+    margin-top: 3rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -278,13 +272,14 @@ header #logo{
      background-color: #000114 ;
     color: white;
     text-align: center;
+    margin-bottom: 220px;
 
 }
     /*footer */
 
             footer{
     padding:10px;
-    margin-top: 45rem;
+    /* margin-top: 30rem; */
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -303,11 +298,6 @@ header #logo{
      float: left;
 }
 
-.intervention{
-     width:100%;
-     font-size: 20px;
-     
-}
 
 .formdiv{
      width:100%;
@@ -318,29 +308,13 @@ header #logo{
  form textarea{
     width:50%;
     
-    margin-top:30px;
-     border-radius: 5px;
-     position: relative;
-     left: 4rem;
+   
+     
 }
 
-.intervention form .input{
 
-    font-size:15px;
-    /* border:#CB4335 2px solid; */
-    border-radius: 5px;
-    background-color:#384142;
-    color:#ffffff;
-    width: 50%;
-}
 
-.intervention  form textarea{
-    width:50%;
-    margin-top:30px;
-     border-radius: 5px;
-     position: relative;
-     left: 6.7rem;
-}
+
 
 form .input{
     font-size:15px;
@@ -350,11 +324,7 @@ form .input{
     color:#ffffff;
     width: 50%;
 }
-.red{
-    position: relative;
-    right: 10rem;
-    top: 12rem;
-}
+
 /* making humberger menu*/
      header{
          overflow: visible;

@@ -156,6 +156,7 @@ a{
 .intervention{
    width:70%;
      font-size: 30px;
+     display: inline-block;
 }
 
 .intervention form span  {
@@ -164,7 +165,7 @@ a{
        color: #003020;
  }
 
- .intervention span textarea{
+ .intervention span .hello{
     width:50%;
     margin-left:5px;
     margin-top:30px;
@@ -212,7 +213,7 @@ form button{
 
             footer{
     padding:10px;
-    margin-top: 27rem;
+    margin-top: 3rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -249,13 +250,13 @@ header #logo{
      background-color: #000114 ;
     color: white;
     text-align: center;
-
+margin-bottom: 180px;
 }
     /*footer */
 
             footer{
     padding:10px;
-    margin-top: 45rem;
+    margin-top: 3rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -289,14 +290,6 @@ header #logo{
     background-color:#384142;
     color:#ffffff;
     width: 50%;
-}
-
-.intervention  form textarea{
-    width:50%;
-    margin-top:30px;
-     border-radius: 5px;
-     
-     
 }
 
  
