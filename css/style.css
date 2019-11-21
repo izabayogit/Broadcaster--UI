@@ -12,7 +12,9 @@ body{
 }
 
 /*global */
-
+section{
+    width: 100%;
+}
 .container{
     width: 80%;
     margin: auto;
@@ -78,7 +80,7 @@ header a{
 }
 
 #introduction{ 
-    
+    width: 100%;
     min-height: 400px;
     background-image: url(../images/moblise.jpg)  ;
     background-repeat: no-repeat ;
@@ -163,7 +165,7 @@ justfy-content: center;
             }
 
             .imagecon:nth-child(2) {
-
+                
                 background-image: url("../images/redflag.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -171,7 +173,7 @@ justfy-content: center;
             }
 
             .imagecon:nth-child(3) {
-
+                
                 background-image: url("../images/megaphone.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
