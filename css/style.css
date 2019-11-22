@@ -11,14 +11,12 @@ body{
     height: 64px;
 }
 
-/*global */
-section{
-    width: 100%;
-}
+
 .container{
     width: 80%;
     margin: auto;
     overflow: hidden;
+    
 }
 ul{
     margin:0;
@@ -46,7 +44,7 @@ header{
 }
 
 header li{
-    float:left;
+    float: left;
     display: inline;
     padding: 0 20px 0 20px;
 }
@@ -101,11 +99,13 @@ header a{
     font-size:20px;
 }
 
-#start{padding: 10px;
+#start{padding-bottom: 10px;
+  padding-top: 10px;  
 color:#ffffff;
 background:#35424a;
 text-align: center;
-justfy-content: center;
+justify-content: center;
+margin: 0;
 
 }
 #start h4{
@@ -113,7 +113,7 @@ justfy-content: center;
     color:#ffffff;
     margin:0;
 }
-
+#
 
 #details, #details .container{
       position:relative;
@@ -162,6 +162,7 @@ justfy-content: center;
                 background-repeat: no-repeat;
                 background-size: cover;
                  background-position:center center;
+                 
             }
 
             .imagecon:nth-child(2) {
@@ -224,7 +225,7 @@ right: 20px;}
 /*footer */
 
             footer{
-    padding:10px;
+    padding: 10px;
     /* margin-top: 20px; */
     color:#ffffff;
     background-color:#35424a;
