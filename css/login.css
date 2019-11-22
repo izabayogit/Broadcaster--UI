@@ -19,9 +19,10 @@ body{
 /*global */
 
 .container{
-    width: 80%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
+    justify-content: center;
 }
 .container h1{
     text-align: center;
@@ -79,6 +80,7 @@ header a{
     text-transform: uppercase;
 }
  button{
+     /* display:inline; */
      margin-left: 35%;
       width: 100px;
       margin-top:30px;
@@ -137,7 +139,7 @@ padding: 4px;
 }
 
 .form{
-    display: inline-block;
+    
     margin-top:100px;
     margin-bottom: 100px;
 }
@@ -173,7 +175,7 @@ button:hover{
     cursor: pointer;
 }
 .form a:hover{
-     background-color: #CB433543;
+     background-color: #CB4335;
 }
 
 @media(max-width:768px){
@@ -192,12 +194,13 @@ button:hover{
     }  
  
 .form a{
-    border: #CB4335 1px solid;
+    border: none;
        border-radius: 5px;
        text-decoration: none;
        color: #ffffff;
         background-color:#CB43;
         float:none;
+        color:#003020;
         
         
 }
@@ -208,7 +211,7 @@ button:hover{
     text-align: center;
     /* display: block; */
     margin-top:30px;
-    margin-left: 15%;
+    margin-left: 0;
     border: #CB4335 1px solid;
      border-radius: 5px;
     
