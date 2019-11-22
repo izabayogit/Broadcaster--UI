@@ -23,6 +23,7 @@ body{
     margin: auto;
     overflow: hidden;
     justify-content: center;
+    
 }
 .container h1{
     text-align: center;
@@ -93,15 +94,17 @@ header a{
 }
 
 .staffForm input{
-padding: 4px;
+    justify-content: center;
     height: 35px;
     width: 300px;
     text-align: center;
-    display: block;
+    /* display: block; */
     margin-top:30px;
-    margin-left: 35%;
+    float: none;
+    margin-left: 0;
     border: #CB4335 1px solid;
      border-radius: 5px;
+     padding: none;
 }
 .form input{
 
@@ -117,6 +120,17 @@ padding: 4px;
     
 }
 
+
+
+.input{
+     padding: 4px;
+    height: 25px;
+    width: 250px;
+    text-align: center;
+    display: block;
+    margin-top:30px;
+    margin-left: 35%;
+}
 .form p{
     padding: 4px;
     height: 25px;
@@ -124,17 +138,24 @@ padding: 4px;
     text-align: center;
     display: block;
     margin-top:30px;
-    margin-left: 35%;
+    margin-left: 30%;
     
      
 }
+.account{
+    font-size: 25px;
+    margin-right:6%;
+}
+.shortcut{
+    margin-right:6%;
+}
 .form a{
-    border: #CB4335 1px solid;
+    
        border-radius: 5px;
        text-decoration: none;
        color: #ffffff;
         background-color:#CB43;
-        float: left;
+        float: none;
         color:#003020;
 }
 
@@ -177,7 +198,11 @@ button:hover{
 .form a:hover{
      background-color: #CB4335;
 }
-
+#loginButton{
+    margin-top:0;
+    margin-bottom: 0;
+    padding-top:0;
+}
 @media(max-width:768px){
 
    
@@ -216,16 +241,50 @@ button:hover{
      border-radius: 5px;
     
 }
+.account{
+    font-size: 25px;
+    margin-right:0;
+}
+.shortcut{
+    margin-right:0;
+}
+.login input{
+   padding: 4px;
+    height: 25px;
+    width: 15.75rem;
+    text-align: center;
+    /* display: block; */
+    margin-top:30px;
+    margin-left: 0;
+    border: #CB4335 1px solid;
+     border-radius: 5px  
+}
 
+.staffForm input{
+    justify-content: center;
+    height: 35px;
+    width: 300px;
+    text-align: center;
+    display: inline-block;
+    margin-top:30px;
+    float: none;
+    margin-left: 0;
+    border: #CB4335 1px solid;
+     border-radius: 5px;
+     padding: none;
+}
 .form p{
+  
     padding: 4px;
     height: 25px;
     width: 250px;
     text-align: center;
     display: block;
     margin-top:30px;
-    margin-left: 15%;
+    margin-left: 20%;
     
+     
+
      
 }
 
@@ -233,13 +292,14 @@ button:hover{
 .form button{
      margin-left: 0;
       width: 100px;
-      margin-top:30px;
+      /* margin-top:30px; */
       height: 35px;
       border-radius: 10px;
       border: #CB4335 1px solid;
       background-color:#CB43;
       color: #ffffff;
       text-transform: uppercase;
+      margin-bottom:0;
 }
 
 .container h1{
