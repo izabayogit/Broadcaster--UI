@@ -102,11 +102,12 @@ padding: 4px;
      border-radius: 5px;
 }
 .form input{
+
     padding: 4px;
     height: 35px;
     width: 300px;
     text-align: center;
-    display: block;
+ 
     margin-top:30px;
     margin-left: 35%;
     border: #CB4335 1px solid;
@@ -132,10 +133,11 @@ padding: 4px;
        color: #ffffff;
         background-color:#CB43;
         float: left;
-        margin-left: 20%;
+        color:#003020;
 }
 
 .form{
+    display: inline-block;
     margin-top:100px;
     margin-bottom: 100px;
 }
@@ -176,6 +178,7 @@ button:hover{
 
 @media(max-width:768px){
 
+   
     header nav, header nav li, .form {
         text-align: center;
         width:100%;
@@ -187,13 +190,23 @@ button:hover{
   header{
       padding-bottom: 20px;
     }  
-
+ 
+.form a{
+    border: #CB4335 1px solid;
+       border-radius: 5px;
+       text-decoration: none;
+       color: #ffffff;
+        background-color:#CB43;
+        float:none;
+        
+        
+}
     .form input{
     padding: 4px;
     height: 25px;
-    width: 200px;
+    width: 15.75rem;
     text-align: center;
-    display: block;
+    /* display: block; */
     margin-top:30px;
     margin-left: 15%;
     border: #CB4335 1px solid;
@@ -213,8 +226,9 @@ button:hover{
      
 }
 
+.form{justify-content: center;}
 .form button{
-     margin-left: 10%;
+     margin-left: 0;
       width: 100px;
       margin-top:30px;
       height: 35px;
