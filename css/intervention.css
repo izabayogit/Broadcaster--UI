@@ -194,7 +194,7 @@ h2{
 
 .geo{
      border-radius: 5px;
-    color:#ffffff;
+    
     width: 50%;
     height: 30px;
 }
@@ -288,13 +288,10 @@ margin-bottom: 180px;
     /* border:#CB4335 2px solid; */
     border-radius: 5px;
     background-color:#384142;
-    color:#ffffff;
+
     width: 50%;
 }
 
- 
-    
-}
 /* making humberger menu*/
      header{
          overflow: visible;
@@ -327,4 +324,7 @@ margin-bottom: 180px;
          
      }
 
+ 
+    
 }
+
