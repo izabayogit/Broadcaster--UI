@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="keywords" content='welcome web design page'>
+        <title> Broadcaster/create intervention</title>
+        <link rel="stylesheet" href="../css/intervention.css">
+
+    </head>
+
+    <body>
+
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <span class="mark">
+                        <h1><img class="brand" src="../images/brodphone.png"> Broadcaster</h1>
+                    </span>
+                </div>
+                <a id="menu" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <nav id="navigator">
+                    <ul>
+                        <li> <a href="../index.html">Home</a></li>
+                        <li> <a href="signin.html">Signout</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div clas="container">
+            <div class="title">
+                <span>
+                    <a href="userInbox.html">
+                    <h3 id="flag"><img src="../images/red-flag.png">create red flag record</h3>
+                    </a>
+                </span>
+                <span>
+
+                    <h3 id="call"> <img src="../images/marketing.png">create intervention record</h3>
+                </span>
+                <span>
+                    <a href="viewintervention.html">
+                        <h3><img src="../images/marketing.png">view interventions </h3>
+                    </a>
+                </span>
+                <span>
+                    <a href="view.html">
+                        <h3> <img src="../images/red-flag.png"> view  red flags</h3>
+                    </a>
+                </span>
+            </div>
+
+            <aside id="sidebar">
+              
+            <a href="editredflag.html">
+                <span>Edit red lag record</span>
+            </a>
+            <a href="deleteredflag.html">
+                <span>Delete red flag record</span>
+            </a>
+            <a href="editintervention.html">
+                <span>Edit intervention record</span>
+            </a>
+            <a href="deleteintervention.html">
+                <span> Delete intervention record </span>
+            </a>
+
+
+            </aside>
+<div class='intervention'>
+
+    <form>
+        <span>
+            <lebel class="red"> Intervention</lebel>
+            <textarea type="text" class="flag" placeholder="Enter intervention record "></textarea>
+        </span>
+        <span>
+            <lebel>Geolocation</lebel>
+            <input type="text" placeholder="Enter geolocation cordinates" class="geo">
+        </span>
+        <span>
+            <lebel>Add a photo</lebel>
+            <input type="file" id='inputImage' class="input">
+        </span>
+        <img id='preview'>
+
+        <span>
+            <lebel>upload video</lebel>
+            <input type="file" id="videoInput" class="input">
+        </span>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+<footer>
+    <p> Broadcaster organisation, copyright &copy; 2019 </p>
+</footer>
+
+<script src="../scripts/inbox.js"></script>
+</body>
+
+
+
+</html>
