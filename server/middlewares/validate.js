@@ -7,7 +7,7 @@ const validate = ( req, res, next ) => {
     email: Joi.string().email().required(),
     password: Joi.string().min( 8 ).required(),
     username: Joi.string().min( 10).max( 255 ).required(),
-    phoneNumber: Joi.number().min(10),
+    phoneNumber: Joi.number().min(10).required(),
   };
   const result = Joi.validate( req.body, schema );
   if ( result.error ) {
