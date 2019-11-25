@@ -69,6 +69,21 @@ class Entity {
   }
 
   
+  getOne = ( req, res ) => {
+    const idnumber = req.params.id;
+    const checkEntry = entityArray.find( ( entity ) => entity.id == idnumber );
+    if ( checkEntry ) {
+      return res.status( 201 ).send( {
+        status: 201,
+        data: checkEntry,
+      } );
+    }
+    return res.status( 404 ).send( {
+      status: 404,
+      error: 'not found',
+    } );
+  }
+
 
 }
 export default new Entity();
