@@ -71,7 +71,10 @@ header a{
     text-transform: uppercase;
 }
 
+.space{
+    display: none;
 
+}
 /*menu*/
 
  .btn span{
@@ -222,7 +225,10 @@ header nav, header nav li, .reports, #start, .info {
     margin: auto;
     overflow: hidden;
 }
+  .space{
+    display: block;
     
+}  
 .content{border-collapse: collapse;
     margin:25px 0;
   font-size: 10px;

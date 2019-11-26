@@ -85,6 +85,7 @@ header a{
     background-position: center center;
     text-align: center;
     color: #0E6251;
+    border-bottom: #CB4335 3px solid;
 }
 
 #introduction h1{
@@ -98,11 +99,13 @@ header a{
     font-size:20px;
 }
 
-#start{padding: 10px;
+#start{padding-top: 10px;
+    padding-bottom: 10px;
 color:#ffffff;
 background:#35424a;
 text-align: center;
-justfy-content: center;
+justify-content: center;
+
 
 }
 #start h4{
@@ -111,7 +114,9 @@ justfy-content: center;
     margin:0;
 }
 
-
+#start a{
+    text-decoration: none;
+}
 #details, #details .container{
       position:relative;
             width:100%;
@@ -230,7 +235,7 @@ right: 20px;}
 }
 
 @media(max-width:768px){
-header nav, header nav li, #introduction h1, #start, #details h1 {
+header nav, header nav li, #introduction h1, #start {
   float: none;
   text-align: center;
   width: 100%;  
@@ -238,7 +243,17 @@ header nav, header nav li, #introduction h1, #start, #details h1 {
  header #logo{
      margin-left:0;
  }
+#details h1{
+    float: none;
+  text-align: center;
+  width: 100%; 
+  
 
+}
+#details{
+    
+    justify-content: center;
+}
  header{
       padding-bottom: 20px;
     } 
@@ -255,9 +270,9 @@ header nav, header nav li, #introduction h1, #start, #details h1 {
 
  .imagecon h1{
                 
-                font-size:55px;
+                font-size:35px;
              position:relative;
-             top:50px;
+             top:140px;
              
                
             

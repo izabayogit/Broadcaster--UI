@@ -81,6 +81,11 @@ header a{
 display: none;
 position: absolute;
 right: 20px;}
+.intervention .container{
+    width: 80%;
+    margin: auto;
+    overflow: visible;
+}
 
 .title span:hover{
     cursor: pointer;
@@ -103,17 +108,14 @@ button:hover{
     background-color:#003020
 }
 
-#sidebar span:hover{
-     cursor: pointer;
-    color:#c85e63;
-}
+
 .title{
     width:100%;
     min-height: 10px;
     border: black 3px solid;
     font-size: 15px;
     margin-top:0;
-
+    margin-bottom:70px;
      background-color: #171819;
      color:white;
      float: left;
@@ -134,40 +136,23 @@ a{
     text-decoration:none;
      color:#ffffff;
 }
-#sidebar{
-    float: right;
-    width:29.1%;
-    border:#3B3C3F 3px solid;
-     background-color: #000114 ;
-    color: white;
-    text-align: center;
 
-}
-
-#sidebar span{
- display: block;
- padding: 15px 0 15px 0;
- border-top: white 1px solid;
-
-
-}
 
 
 .intervention{
-   width:70%;
+   width:100%;
      font-size: 30px;
 }
 
-.intervention form span  {
-     display: block;
-     padding-top: 10px;
+.intervention form   {
+     
+   
        color: #003020;
  }
 
- .intervention span textarea{
+ .intervention  textarea{
     width:50%;
-    margin-left:5px;
-    margin-top:30px;
+   height:6rem;
      border-radius: 5px;
 }
 
@@ -178,24 +163,25 @@ h2{
     padding: 4px;
     height: 35px;
    
-    margin-left: 15%;
+    
    
      
 }
  form .input{
     font-size:30px;
-    /* border:#CB4335 2px solid; */
+    border: #cccccc solid 1px;
     border-radius: 5px;
-    background-color:#384142;
-    color:#ffffff;
+ 
     width: 50%;
 }
 
 .geo{
-     border-radius: 5px;
-    color:#ffffff;
+    border-radius: 5px;
+   
     width: 50%;
-    height: 30px;
+    height: 27px;
+    box-sizing: border-box
+    
 }
 
 form button{
@@ -203,7 +189,7 @@ form button{
     width: 20%;
     text-transform: uppercase;
     color:#003020;
-    margin-left: 11rem;
+    margin-right: 9rem;
     border-radius:10px;
     background: #cccccc;
     font-weight: bold;
@@ -212,7 +198,7 @@ form button{
 
             footer{
     padding:10px;
-    margin-top: 27rem;
+    margin-top: 39rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -236,26 +222,22 @@ header #logo{
  header{
       padding-bottom: 20px;
     } 
-    
-#sidebar{
-    font-size: 12px;
-         width:32.5%;
-        text-align: center;
-        
-        display: inline;
-    float: right;
-    
-    border:#3B3C3F 3px solid;
-     background-color: #000114 ;
-    color: white;
-    text-align: center;
+     
+    form button{
+        height:35px;
+        text-transform: uppercase;
+        color:#003020;
+        margin-right: auto;
+        border-radius:10px;
+        background: #cccccc;
+        font-weight: bold;
+    }
 
-}
     /*footer */
 
             footer{
     padding:10px;
-    margin-top: 35rem;
+    margin-top: 3rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -268,7 +250,7 @@ header #logo{
     border: black 3px solid;
     font-size: 15px;
     margin-top:0;
-     margin-bottom:10px;
+     margin-bottom: 0px;
      background-color: #171819;
      color:white;
      float: left;
@@ -277,7 +259,7 @@ header #logo{
 .intervention{
      width:100%;
      font-size: 20px;
-     
+     display: inline-block;
 }
 
 
@@ -289,22 +271,18 @@ header #logo{
     background-color:#384142;
     color:#ffffff;
     width: 50%;
+   
 }
 
 .intervention  form textarea{
     width:50%;
     margin-top:30px;
      border-radius: 5px;
-     position: relative;
-     left: 6.7rem;
+     
 }
 
 
-.red{
-    position: relative;
-    right: 15rem;
-    top: 9rem;
-}
+
 /* making humberger menu*/
      header{
          overflow: visible;
@@ -336,5 +314,10 @@ header #logo{
          max-height: 500px;
          
      }
+     .intervention  textarea{
+        width:50%;
+       height:3rem;
+         border-radius: 5px;
+    }
 
 }
