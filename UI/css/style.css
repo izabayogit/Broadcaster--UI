@@ -1,0 +1,313 @@
+body{
+    font-family: aerial,helvetica, sans-serif;
+    font-size: 18px;
+    line-height:1.5;
+    margin:0;
+    padding:0;
+    background-color:#cccccc;
+}
+.brand{
+    width: 64px;
+    height: 64px;
+}
+
+/*global */
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+
+button{
+    height:38px;
+    background:#0E6251;
+    border-radius: 10px;
+    padding:0 20px 0 20px;
+    color:#ffffff;
+    text-transform: uppercase
+}
+ button:hover{
+     cursor: pointer;}
+
+
+header{
+    background-color:#34495E;
+    color:#ffffff;
+    padding-top:20px;
+    min-height:50px;
+    border-bottom:#CB4335 3px solid;
+}
+
+header li{
+    float:left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #logo{
+    float:left;
+}
+header #logo h1{
+    margin:0;
+}
+
+header nav{
+    float:right;
+    margin-top: 15px;
+}
+
+header .mark, header .current a{
+    color: #e8491d;
+    font-weight:bold;
+}
+header a:hover{
+    color:#cccccc;
+    cursor: pointer;
+}
+header a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+#introduction{ 
+    
+    min-height: 400px;
+    background-image: url(../images/moblise.jpg)  ;
+    background-repeat: no-repeat ;
+    background-size: cover ;
+    background-position: center center;
+    text-align: center;
+    color: #0E6251;
+    border-bottom: #CB4335 3px solid;
+}
+
+#introduction h1{
+    margin-top:100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+    
+}
+
+#introduction p{
+    font-size:20px;
+}
+
+#start{padding-top: 10px;
+    padding-bottom: 10px;
+color:#ffffff;
+background:#35424a;
+text-align: center;
+justify-content: center;
+
+
+}
+#start h4{
+    float: left;
+    color:#ffffff;
+    margin:0;
+}
+
+#start a{
+    text-decoration: none;
+}
+#details, #details .container{
+      position:relative;
+            width:100%;
+            margin: 0;
+            left:0;
+         
+}
+            .slider {
+                overflow: hidden;
+            }
+
+            .slider figure {
+                width: 500%;
+                height: 500px;
+                position: relative;
+                margin:0;
+                left: 0;
+                animation: slider 20s infinite;
+            }
+
+            .slider figure .imagecon {
+                height: 500px;
+                width: 20%;
+                text-align: center;
+                float: left;
+                color:#ffffff;}
+            
+           .imagecon .content{
+               margin: 0 50px 0 5px;
+           }
+            .imagecon h1{
+                
+                font-size:55px;
+             position:relative;
+             top:100px;
+             
+               
+             
+         
+            }
+
+            .imagecon:nth-child(1) {
+                 text-align: center;
+                background-image: url("../images/account.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                 background-position:center center;
+            }
+
+            .imagecon:nth-child(2) {
+
+                background-image: url("../images/redflag.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position:center center;
+            }
+
+            .imagecon:nth-child(3) {
+
+                background-image: url("../images/megaphone.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+             @keyframes slider {
+                0% {
+                    left: 0;
+                }
+
+                30% {
+                    left: 0;
+                }
+
+                35% {
+                    left: -100%;
+                }
+
+                65% {
+                    left: -100%;
+                }
+
+                70% {
+                    left: -200%;
+                }
+
+                100% {
+                    left: -200%;
+                }
+            }
+
+            
+/*menu*/
+
+ .btn span{
+    display: block;
+    margin: 6px;
+    width:40px;
+    height: 3px;
+    background:#ffffff;
+    
+}
+ .btn{
+display: none;
+position: absolute;
+right: 20px;}
+
+/*footer */
+
+            footer{
+    padding:10px;
+    /* margin-top: 20px; */
+    color:#ffffff;
+    background-color:#35424a;
+    border-top:#CB4335 3px solid;
+    text-align: center;
+}
+
+@media(max-width:768px){
+header nav, header nav li, #introduction h1, #start {
+  float: none;
+  text-align: center;
+  width: 100%;  
+}
+ header #logo{
+     margin-left:0;
+ }
+#details h1{
+    float: none;
+  text-align: center;
+  width: 100%; 
+  
+
+}
+#details{
+    
+    justify-content: center;
+}
+ header{
+      padding-bottom: 20px;
+    } 
+ 
+ #introduction h1{
+     margin-top:40px;
+ }
+ #start button{
+     display: block;
+     width:100%;
+     margin:10px 0 10px 0;
+
+ }
+
+ .imagecon h1{
+                
+                font-size:35px;
+             position:relative;
+             top:140px;
+             
+               
+            
+            }
+
+/* making humberger menu*/
+     header{
+         overflow: visible;
+     }
+     
+           
+     nav{
+         width:100%;
+         right: 0;
+         top: 80px;
+         overflow: hidden;
+         max-height:0;
+         
+     }
+     nav a{
+         display: block;
+         text-align: center;
+         padding: 10px;
+         margin: 0;
+     }
+     .btn{
+         display: block;
+     }
+     .btn:hover >span{
+         cursor: pointer;
+         background:#6ab04c; 
+     }
+     .show{
+         max-height: 500px;
+     }
+
+}
+            

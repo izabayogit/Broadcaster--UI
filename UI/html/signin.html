@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="keywords" content='welcome web design page'>
+        <title> Broadcaster/signin</title>
+        <link rel="stylesheet" href="../css/login.css">
+
+    </head>
+
+    <body>
+
+        <header>
+            <div class="container">
+                <div id="logo">
+                    <span class="mark">
+                        <h1><img class="brand" src="../images/brodphone.png"> Broadcaster</h1>
+                    </span>
+                </div>
+                <a id="menu" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <nav id="navigator">
+                    <ul>
+                        <li > <a href=" ../index.html">Home</a></li>
+                        <li class="current"> <a href="signin.html">Signin</a></li>
+                        <li> <a href="signup.html">Signup</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <h1>welcome to broadcaster signin page</h1>
+            <div class="form"  id="user">
+            
+                <form class="login" action="userInbox.html">
+                    <input id="username" type="text" name="username" required placeholder="Enter Email or Username">
+                    <input id="password" type="password" name="password" required placeholder="Enter Password">
+                    <button type="submit"   >log in</button>
+                    <p>
+                         don't you have an account ? <a href="signup.html"> Sign up</a> </p>
+            </form>
+            <button type="submit" id="staffButton">staff login</button>
+        </div>
+             <div class="staffForm" id=" staff">
+
+<form class="login" action="admin.html">
+    <input id="username" type="text" name="username" required placeholder="Enter Email or Username">
+    <input id="password" type="password" name="password" required placeholder="Enter Password">
+    <button type="submit" >log in</button>
+    
+    <p>
+      
+    </form>
+    <button type="submit" id="loginButton">user login</button>
+             </div>
+
+        </div>
+        <footer>
+            <p> Broadcaster organisation, copyright &copy; 2019 </p>
+        </footer>
+
+        <script src="../scripts/signin.js"></script>
+
+</body>
+</html>

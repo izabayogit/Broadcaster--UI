@@ -1,0 +1,302 @@
+body{
+    font-family: aerial,helvetica, sans-serif;
+    font-size: 18px;
+    line-height:1.5;
+    margin:0;
+    padding:0;
+    background-color:#ffffff;
+}
+.brand{
+    width: 64px;
+    height: 64px;
+}
+
+/*global */
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+button{
+    height:38px;
+    background:#0E6251;
+    border-radius: 10px;
+    padding:0 20px 0 20px;
+    color:#ffffff;
+    text-transform: uppercase
+}
+ button:hover{
+     cursor: pointer;}
+
+
+header{
+    background-color:#34495E;
+    color:#ffffff;
+    padding-top:20px;
+    min-height:50px;
+    border-bottom:#CB4335 3px solid;
+}
+
+header li{
+    float:left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #logo{
+    float:left;
+}
+header #logo h1{
+    margin:0;
+}
+
+header nav{
+    float:right;
+    margin-top: 15px;
+}
+
+header .mark, header .current a{
+    color: #e8491d;
+    font-weight:bold;
+}
+header a:hover{
+    color:#cccccc;
+    cursor: pointer;
+}
+header a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.space{
+    display: none;
+
+}
+/*menu*/
+
+ .btn span{
+    display: block;
+    margin: 6px;
+    width:40px;
+    height: 3px;
+    background:#ffffff;
+    
+}
+ .btn{
+display: none;
+position: absolute;
+right: 20px;}
+
+.info .container{
+    width: 90%;
+}
+.content{border-collapse: collapse;
+    margin:25px 0;
+  font-size: 1.2em;
+min-width:400px;
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 2px rgba(0, 0, 0, 0, 15);
+}
+.content thead tr{background-color:#505c5e;
+color:#ffffff;
+text-align: left;
+font-weight: bold;
+}
+.content th, content td{padding: 12px 30px;}
+.content tbody tr{border-bottom: 1px solid #dddddd;
+text-align:center;
+margin-top:30px ;}
+.content tbody tr:nth-of-type(even){background-color:#f3f3f3;}
+.content tbody tr:last-of-type{
+    
+border-bottom: 2px solid #505c5e;
+
+ }
+ .paging{
+     display: inline-block;
+
+ }
+ .pagging a{
+     /* float: left; */
+     padding: 8px 16px;
+     border: 1px solid #ddd;
+     color: #003020;
+ }
+
+ .paging a.active{
+     background-color: #acaf50;
+     border: 1px solid #4caf50;
+     color: white;
+ }
+
+ .paging a:hover:not(.active){
+     background-color: #ccc;
+     color: black;
+ }
+.paging a:first-child{
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+.paging a:last-child{
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+}
+
+
+
+ .next, .previous{
+     border: solid 1px #cccccc;
+     border-radius:4px;
+ }
+ .previous:hover, .next:hover{
+     cursor: pointer;
+    color:#ffffff;
+    background-color:#003020;
+ }
+.reports{
+    background-color:#CCCCCC;
+     border: #cccccc solid 1px;
+     border-radius: 5px;
+}
+ .reports .report{
+    float: left;
+     width:30%;
+    padding: 10px;
+    text-align: center;
+    background: #e6e6e6;
+    border: #cccccc solid 1px;
+    border-radius: 5px;
+      justify-content: center;
+} 
+
+.reports .container{
+    width: 90%;
+}
+
+.article{
+     width: 40px;
+  height: 30px;
+  border-radius: 30%;
+  text-align: center;
+  border: 1px solid rgb(154, 170, 154);;
+  background-color:#ffffff;
+}
+
+
+a{
+    text-decoration:none;
+    color:#0E6251;
+}
+h1{
+    text-align: center;
+}
+/*footer */
+
+            footer{
+    padding:10px;
+    /* margin-top: 13rem; */
+    color:#ffffff;
+    background-color:#35424a;
+    border-top:#CB4335 3px solid;
+    text-align: center;
+}
+
+
+@media(max-width:768px){
+header nav, header nav li, .reports, #start, .info {
+  float: none;
+  text-align: center;
+  width: 100%;  
+}
+ header #logo{
+     margin-left:0;
+ }
+
+ header{
+      padding-bottom: 20px;
+    } 
+
+.info .container{
+     width: 98%;
+    margin: auto;
+    overflow: hidden;
+}
+  .space{
+    display: block;
+    
+}  
+.content{border-collapse: collapse;
+    margin:25px 0;
+  font-size: 10px;
+min-width:400px;
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 2px rgba(0, 0, 0, 0, 15);
+}
+    .content th, content td{padding: 12px 10px;}b
+/* #view{
+    font-size: 16px;
+    line-height:1.5; 
+   text-align: center;
+}
+#view p{
+     width: 100%;
+  color:#0E6251;
+  margin-top: 13px;
+}
+
+#viewt{
+    font-size: 14px;
+    line-height:0.5; 
+   text-align: center;
+   padding-top: 0;
+    padding-bottom:0;
+    margin-top: 0;
+   
+}
+#viewt p{
+     width: 100%;
+  color:#0E6251;
+  margin-top: 2px;
+    padding-top: 0;
+    padding-bottom:0
+} */
+
+
+/* making humberger menu*/
+     header{
+         overflow: visible;
+     }
+     
+           
+     nav{
+         width:100%;
+         right: 0;
+         top: 80px;
+         overflow: hidden;
+         max-height:0;
+         
+     }
+     nav a{
+         display: block;
+         text-align: center;
+         padding: 10px;
+         margin: 0;
+     }
+     .btn{
+         display: block;
+     }
+     .btn:hover >span{
+         cursor: pointer;
+         background:#6ab04c; 
+     }
+     .show{
+         max-height: 500px;
+     }
+
+}
+            
