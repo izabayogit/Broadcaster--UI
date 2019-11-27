@@ -83,7 +83,30 @@ class Entity {
       error: 'not found',
     } );
   }
-
+  deleteEntry = (id) => {
+    const index = entityArray.indexOf(id);
+    entityArray.splice(index, 1);
+    return {};
+  }
+ 
+  delete = (req, res) => {
+    const Id = req.params.id;
+    const checkEntry = entityArray.find( ( entity ) => entity.id == Id );
+    if (checkEntry) {
+      this.deleteEntry(Id);
+      return res.status( 200 ).send( {
+        status: 200,
+        data: {
+          Id,
+          message: 'red-flag record has been deleted',
+        },
+      } );
+    }
+    return res.status(404).send({
+      status: 404,
+      error: 'entity not found',
+    });
+  }
 
 }
 export default new Entity();

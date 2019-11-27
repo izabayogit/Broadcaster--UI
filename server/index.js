@@ -7,7 +7,7 @@ import entityRoute from './routes/entityRoutes';
 const app = express();
 app.use( bodyParse.json() );
 app.use( '/api/v1/auth', userRoute );
-app.use( '/api/v1/auth', entityRoute );
+app.use( '/api/v1', entityRoute );
 
 
 const port = 4000;
