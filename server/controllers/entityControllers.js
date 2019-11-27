@@ -73,8 +73,8 @@ class Entity {
     const idnumber = req.params.id;
     const checkEntry = entityArray.find( ( entity ) => entity.id == idnumber );
     if ( checkEntry ) {
-      return res.status( 201 ).send( {
-        status: 201,
+      return res.status( 302 ).send( {
+        status: 302,
         data: checkEntry,
       } );
     }
@@ -107,6 +107,29 @@ class Entity {
       error: 'entity not found',
     });
   }
-
+  update = (id) => {
+    const checkEntry = entityArray.find( ( entity ) => entity.id == id );
+     const index = entityArray.indexOf(checkEntry);
+     return entityArray[index];
+   }
+   editComment = (req, res) => {
+    const idnumber = req.params.id;
+    const updated = this.update(idnumber);
+    if ( !updated) {
+      return res.status( 404 ).send( {
+        status: 404,
+        error: 'not found',
+      } );
+    }
+  
+    updated.comment = req.body.comment;
+    const { id } = updated;
+    
+    return res.status( 404 ).send( {
+      status: 200,
+      id,
+      message:  updated,
+    } );
+  }
 }
 export default new Entity();
