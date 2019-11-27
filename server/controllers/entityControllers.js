@@ -80,7 +80,7 @@ class Entity {
     }
     return res.status( 404 ).send( {
       status: 404,
-      error: 'not found',
+      error: 'red-flag with given ID was not found',
     } );
   }
   deleteEntry = (id) => {
@@ -125,11 +125,27 @@ class Entity {
     updated.comment = req.body.comment;
     const { id } = updated;
     
-    return res.status( 404 ).send( {
+    return res.status( 200 ).send( {
       status: 200,
       id,
       message:  updated,
     } );
   }
+  
+ editLocation = (req, res) => {
+  const idnumber = req.params.id;
+  const updated = this.update(idnumber);
+  if ( !updated) {
+    return res.status( 404 ).send( {
+      status: 404,
+      error: 'not found',
+    } );
+  }
+  updated.location = req.body.location;
+  return res.status( 200 ).send( {
+    status: 200,
+    message: updated,
+  } );
+}
 }
 export default new Entity();
