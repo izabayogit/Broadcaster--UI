@@ -206,7 +206,7 @@ h1{
 }
 
 
-@media(max-width:768px){
+@media(max-width:768px) {
 header nav, header nav li, .reports, #start, .info {
   float: none;
   text-align: center;
@@ -248,9 +248,9 @@ header nav, header nav li, .reports, #start, .info {
         text-align:center;
         margin-top:30px ;}
 .content{border-collapse: collapse;
-    margin:25px 0;
+    margin:25px ;
   font-size: 6px;
-min-width:400px;
+min-width:300px;
 border-radius: 5px 5px 0 0;
 overflow: hidden;
 box-shadow: 0 0 2px rgba(0, 0, 0, 0, 15);
@@ -259,7 +259,7 @@ box-shadow: 0 0 2px rgba(0, 0, 0, 0, 15);
     .reports h3{
         font-size:16px;
     
-
+    }
      header{
          overflow: visible;
      }
@@ -291,4 +291,5 @@ box-shadow: 0 0 2px rgba(0, 0, 0, 0, 15);
      }
 
 }
-            
+
+         
