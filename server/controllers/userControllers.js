@@ -47,8 +47,8 @@ class UserController {
     }
 
     const token = generateToken( checkLogin.id, checkLogin.email );
-    return res.status( 201 ).send( {
-      status: 201,
+    return res.status( 200 ).send( {
+      status: 200,
       message: 'user loged in successfully',
       data: {
         id: checkLogin.id,
