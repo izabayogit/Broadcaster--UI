@@ -43,12 +43,12 @@
     "multer": "^1.4.2",
     "node": "^13.1.0",
     "nyc": "^14.1.1",
-    "travis-ci": "^2.2.0"
+    "travis-ci": "^2.2.0",
+    "nodemon": "^2.0.1"
   },
   "devDependencies": {
     "coveralls": "^3.0.9",
     "eslint": "^6.7.0",
-    "eslint-plugin-import": "^2.18.2",
-    "nodemon": "^2.0.1"
+    "eslint-plugin-import": "^2.18.2"
   }
 }
