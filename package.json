@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --require @babel/register ./server/index.js",
     "test": "nyc mocha server/test --require @babel/register --timeout 10000 --exit",
-    "dev": "nodemon --exec babel-node ./server/index.js",
+    "dev-start": "nodemon --exec babel-node ./server/index.js",
     "coverage": "nyc npm run test && nyc report --reporter=text-lcov | coveralls",
     "showCoverage": "start coverage/server/index.html"
   },
