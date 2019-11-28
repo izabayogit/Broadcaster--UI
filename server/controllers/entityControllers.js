@@ -118,7 +118,7 @@ class Entity {
     if ( !updated) {
       return res.status( 404 ).send( {
         status: 404,
-        error: 'not found',
+        error: 'comment with a given ID was not found',
       } );
     }
   
@@ -127,8 +127,11 @@ class Entity {
     
     return res.status( 200 ).send( {
       status: 200,
-      id,
-      message:  updated,
+   
+      message: "comment updated succesfully",
+      data:{
+        updated
+      } 
     } );
   }
   
@@ -138,13 +141,15 @@ class Entity {
   if ( !updated) {
     return res.status( 404 ).send( {
       status: 404,
-      error: 'not found',
+      error: 'location with a given ID was not  found',
     } );
   }
   updated.location = req.body.location;
   return res.status( 200 ).send( {
     status: 200,
-    message: updated,
+    message: "location updated successfully",
+    data:{
+      updated}
   } );
 }
 }
