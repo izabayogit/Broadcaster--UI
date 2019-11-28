@@ -32,17 +32,5 @@ class Verify {
      } );
    }
  }
-
-    handleImage = (req, res, next) => {
-      multer.diskStorage({
-        destination: (file, cb) => {
-          cb(null, './uploads/');
-        },
-        filename: ( file, cb) => {
-          cb(null, new Date().toISOString() + file.originalname);
-        },
-      });
-      next();
-    }
 }
 export default new Verify();
