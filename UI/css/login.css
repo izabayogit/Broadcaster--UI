@@ -59,6 +59,7 @@ header #logo{
 }
 header #logo h1{
     margin:0;
+    color: #e8491d;
 }
 
 header nav{
@@ -87,7 +88,7 @@ header a{
       height: 35px;
       border-radius: 10px;
       border: #CB4335 1px solid;
-      background-color:#CB43;
+      background-color:#34495E;
       color: #ffffff;
       text-transform: uppercase;
 }

@@ -7,6 +7,9 @@ body{
     background-color:#ffffff;
 }
 
+*{
+    box-sizing:border-box;
+}
 .brand{
     width: 64px;
     height: 64px;
@@ -21,10 +24,23 @@ body{
     
 }
 
+.formdiv{
+
+    margin-top: 5em;
+  
+    color:#485e74;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1em;
+}
 .formdiv .container{
     overflow: visible;
-    justify-content: center;
-    margin: auto;
+    
+    
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
  
 
 }
@@ -38,22 +54,31 @@ ul{
 header{
     background-color:#34495E;
     color:#ffffff;
-    padding-top:20px;
+    /* padding-top:20px; */
     min-height:50px;
     border-bottom:#CB4335 3px solid;
 }
 
+#flag{
+    color:#e8491d;
+}
 header li{
     float: left;
     display: inline;
     padding: 0 20px 0 20px;
+    margin-top:0;
 }
 
 header #logo{
     float:left;
+    margin-top:0;
+    padding-top:0;
 }
 header #logo h1{
     margin:0;
+    margin-top:0;
+    padding-top:0;
+    color:#CB4335;
 }
 
 header nav{
@@ -130,73 +155,80 @@ button:hover{
    
    
 }
-#flag{
-    color:#e8491d;
-}
- 
-a{
-    text-decoration:none;
-     color:#ffffff;
-}
 
- .form .container form{
-   
- }
- .formdiv form   {
- 
-     padding-top: 10px;
-       color: #003020;
-      
-       
-       
- }
 
- textarea{
-    width:50%;
-   height: 6rem;;
-    margin-top:30px;
-     border-radius: 5px;
+
+.container{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
 }
-h2{
+.wrapper{
+    box-shadow: 0 0  20px 0 rgba(72,94, 116,0.7);
+
+}
+.wrapper > *{
+    padding: 1em;
+}
+.broadcaster-info{
+    background: #34495E;
+    color:#FFFFFF;
+}
+.broadcaster-info h3{
     text-align: center;
+    margin: 0 0 1em 0;
 }
- form {
-    padding: 0;
-    height: 35px;
- 
+.record{
+    background: #f9feff;
+}
+
+/*form styles*/
+
+.record form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
     
 }
- form .input{
-    font-size:30px;
-    border: #cccccc solid 1px;
-    border-radius: 5px;
- 
-    width: 50%;
+
+.record form lebel{
+    display: block;
 }
 
-.geo{
-     border-radius: 5px;
-   
-    width: 50%;
-    height: 30px;
-    box-sizing: border-box;
+.record form  p{
+    margin: 0;
+    padding: 0;
 }
 
-form button{
-    height:35px;
-    width: 20%;
+.record form .full{
+    grid-column: 1/3;
+}
+
+.record form button, .record form input, .record form textarea{
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #c9e6ff;
+}
+
+.record form button{
+    background-color: #34495E;
+    border: 0;
     text-transform: uppercase;
-    color:#003020;
-    margin-right: 14rem;
-    border-radius:10px;
-    background: #cccccc;
-    font-weight: bold;
+    color: #ffffff;
 }
-/*footer */
+
+.record form button:hover, .record form button:focus{
+    color:#34495E;
+    background-color:#cccccc;
+    outline:0;
+    transition: background-color 2s ease-out;
+
+}
 
     footer{
     padding:10px;
-    margin-top: 35rem;
+    margin-top: 5rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
@@ -214,6 +246,8 @@ form button{
    
 header #logo{
      margin-left:0;
+     margin-top:0;
+     padding-top:0;
  }
 
  header{
@@ -223,23 +257,16 @@ header #logo{
 
             footer{
     padding:10px;
-    margin-top: 3rem;
+    margin-top: 1rem;
     color:#ffffff;
     background-color:#35424a;
     border-top:#CB4335 3px solid;
     text-align: center;
 }
 
-form button{
-    height:35px;
-    width: 30%;
-    text-transform: uppercase;
-    color:#003020;
-    margin:auto;
-}
   
 .title{
-    width:65%;
+    width:100%;
     min-height: 30px;
     border: black 3px solid;
     font-size: 15px;
@@ -250,43 +277,39 @@ form button{
    
 }
 
-   
-   
-
-.intervention{
-     width:100%;
-     font-size: 20px;
-     
-}
-
 .formdiv{
-     width:100%;
-     font-size: 20px;
-     justify-content: center;
-     display: inline-block;
-      
- }
- form textarea{
-    width:50%;
-    
-    
-}
 
-
-textarea{
-    width:50%;
-   height: 3rem;
-    margin-top:30px;
-     border-radius: 5px;
-}
-form .input{
-    font-size:15px;
-    
-    border-radius: 5px;
+    margin-top: 15em;
   
-    
-    width: 50%;
 }
+   
+
+.record form button, .record form input, .record form textarea{
+    width: 100%;
+    padding: 1em 0 1em 0.3em;
+    border: 1px solid #c9e6ff;
+}
+
+
+.record form{
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    
+}
+
+.formdiv .container{
+    overflow: visible;
+    
+    
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: ;
+    padding: 1em;
+ 
+
+}
+
 
 /* making humberger menu*/
      header{
