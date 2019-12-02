@@ -16,7 +16,7 @@
             <div class="container">
                 <div id="logo">
                     <span class="mark">
-                        <h1><img class="brand" src="../images/brodphone.png"> Broadcaster</h1>
+                      <a href="../index.html">  <h1><img class="brand" src="../images/brodphone.png"> Broadcaster</h1> </a>
                     </span>
                 </div>
                 <a id="menu" class="btn">
@@ -34,8 +34,9 @@
             </div>
         </header>
 
-        <div clas="container">
+       
             <div class="title">
+                    <div clas="container">
                 <span>
                     <a href="userInbox.html">
                     <h3 id="flag"><img src="../images/red-flag.png">create red flag record</h3>
@@ -56,32 +57,55 @@
                     </a>
                 </span>
             </div>
-
+        </div>
 <div class='intervention'>
-    <div class="container">
-<center>
-    <form>
-        
-            <lebel > Intervention  &nbsp</lebel>
-            <textarea type="text" class="flag" placeholder="Enter intervention record "></textarea>
-            <br>
-             <br>
-            <lebel>Location  &nbsp  &nbsp &nbsp &nbsp </lebel>
-            <input type="text" placeholder="Enter geolocation cordinates" class="geo">
-             <br>
-             <br>
-            <lebel> Upload photo </lebel>
-            <input type="file" id='inputImage' class="input">
-            <br>
-             <br>
-            <lebel>Upload video </lebel>
-            <input type="file" id="videoInput" class="input">
-            <br>
-            <br>
-        <button type="submit">Submit</button>
-    </form>
-</center>
-</div>
+  
+        <div class="formdiv">
+            <div class='container'>
+            <div class="wrapper">
+                <div class="broadcaster-info">
+                    <h3>fill in the form bellow to create intervention record</h3>
+                </div>
+                <div class="record">
+                    
+                    <form action="#">
+                            <p class="full">
+                                    <lebel>intervention</lebel>
+                                    <textarea type="text" rows="5" placeholder="type your red-flag here"></textarea>
+                                
+                                </p>
+                       
+                        <p>
+                                <lebel>upload photo</lebel>
+                                <input type="file">
+                            
+                            </p>
+                            <p>
+                                    <lebel>upload video</lebel>
+                                    <input type="file">
+                                
+                                </p>
+    
+                                <p>
+                                        <lebel>Geolocation</lebel>
+                                        <input type="text" placeholder="type location coordinates">
+                                    
+                                    </p>
+                                <p>
+                                        <lebel>comment</lebel>
+                                        <input type="text" placeholder="tyepe your comment">
+                                    
+                                    </p>
+                                    <p class="full">
+                                            <button>submit</button>
+                                        
+                                        </p>
+                    </form>
+                </div>
+    
+            </div>
+        </div>
+    </div>
 </div>
 <footer>
     <p> Broadcaster organisation, copyright &copy; 2019 </p>
