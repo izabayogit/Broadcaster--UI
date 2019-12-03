@@ -1,12 +1,9 @@
 import db from '../models/db';
 import generateToken from '../helpers/token';
 
-import Helper from '../helpers/hash';
-
 
 class Register {
    create = async (req, res) => {
-    const hashPassword = Helper.hashPassword(req.body.password);
      const text = `INSERT INTO users ( firstName, lastName, email, password, username, phoneNumber)
     VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *`;
