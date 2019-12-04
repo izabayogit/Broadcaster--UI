@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import dotenv from 'dotenv';
-import user from '../controllers/userControllers';
+
 
 dotenv.config();
 

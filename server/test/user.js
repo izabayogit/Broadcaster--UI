@@ -7,7 +7,18 @@ import generateToken from '../helpers/token';
 
 const { expect } = chai;
 chai.use(chaiHttp);
-
+const wrongLodin ={
+  email: 'izabayojonas@gmail.com',
+  password: 'jonas1239',
+};
+const emptyUser={
+  email: '',
+  password: '',
+};
+const logUser={
+  email: 'izabayojonas@gmail.com',
+  password: 'jonas123',
+};
 const newUser = {
   firstName: 'izabayo',
   lastName: 'jonas',
@@ -79,3 +90,44 @@ describe( ' sign up', () => {
       });
   } );
 });
+
+describe( ' sign in', () => {
+  it('should return successfully', (done) => {
+    chai.request(server)
+      .post('/api/v2/auth/signin')
+      .set('accept', 'application/json')
+      .send(logUser)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(200);
+        expect(res.body.message).to.equal('user loged in successfully');
+        expect(res.body.data).to.be.an('object');
+        done();
+      });
+  } );
+  it('should return error incorrect email or password', (done) => {
+    chai.request(server)
+      .post('/api/v2/auth/signin')
+      .set('accept', 'application/json')
+      .send(wrongLodin)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(401);
+        expect(res.body.error).to.equal('incorrect email or password');
+        done();
+      });
+  } );
+  it('should return error for wrong user', (done) => {
+    chai.request(server)
+      .post('/api/v2/auth/signin')
+      .set('accept', 'application/json')
+      .send(emptyUser)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(400);
+        expect(res.body.error).to.be.equal('"email" is not allowed to be empty');
+        done();
+      });
+  } );
+});
+

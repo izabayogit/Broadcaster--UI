@@ -5,5 +5,5 @@ import loginValidate from '../middlewares/loginValidate';
 
 const router = express.Router();
 router.post( '/signup', validate, db.create );
-// router.post( '/signin', loginValidate, userController.signin );
+router.post( '/signin', loginValidate, db.login );
 export default router;

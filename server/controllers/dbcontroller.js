@@ -45,7 +45,34 @@ class Register {
      }
    }
 
-  
+   // eslint-disable-next-line class-methods-use-this
+   async login(req, res) {
+    if (!req.body.email || !req.body.password) {
+      return res.status(400).send({ message: 'Some values are missing' });
+    }
+
+    const text = 'SELECT * FROM users WHERE email = $1 AND password= $2';
+    try {
+      const { rows } = await db.execute(text, [req.body.email, req.body.password]);
+
+      const token = generateToken( rows[0].id, rows[0].email );
+      if (!rows) {
+        return res.status(400).send({ message: 'The credentials you provided is incorrect' });
+      }
+      return res.status(200).send({
+        status: 200,
+        message: 'user loged in successfully',
+        data: {
+          token,
+        },
+      });
+    } catch (error) {
+      return res.status(401).send({
+        status: 401,
+        error: 'incorrect email or password',
+      });
+    }
+  }
 }
 
 export default new Register();
