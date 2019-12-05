@@ -101,5 +101,16 @@ class Register {
         return res.status(400).send(err.message);
       }
     }
+
+    getAll = async (req, res) => {
+      const findAllQuery = 'SELECT * FROM entity ';
+      try {
+        const { rows } = await db.execute(findAllQuery);
+        return res.status(200).send({ rows });
+      } catch (error) {
+        return res.status(400).send(error.message);
+      }
+    }
+
 }
 export default new Register();
