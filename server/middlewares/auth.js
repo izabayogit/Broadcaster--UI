@@ -1,3 +1,4 @@
+
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import db from '../models/db';
@@ -46,3 +47,4 @@ class Verify {
  }
 }
 export default new Verify();
+

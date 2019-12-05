@@ -1,3 +1,4 @@
+
 import date from 'date-and-time';
 import db from '../models/db';
 
@@ -135,3 +136,6 @@ class Register {
 
 }
 export default new Register();
+
+
+

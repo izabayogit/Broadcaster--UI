@@ -1,7 +1,5 @@
 import db from '../models/db';
 import generateToken from '../helpers/token';
-
-
 class Register {
    create = async (req, res) => {
      const text = `INSERT INTO users ( firstName, lastName, email, password, username, phoneNumber)
@@ -44,7 +42,6 @@ class Register {
        return res.status(400).json(error.message);
      }
    }
-
    // eslint-disable-next-line class-methods-use-this
    async login(req, res) {
     if (!req.body.email || !req.body.password) {

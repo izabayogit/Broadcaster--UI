@@ -1,3 +1,4 @@
+
 import express from 'express';
 import multer from 'multer';
 import Verify from '../middlewares/auth';
@@ -13,3 +14,4 @@ router.get('/red-flags', Verify.userData, dbentry.getAll);
 router.get('/red-flags/:id', Verify.userData, dbentry.getOne);
 router.delete('/red-flags/:id', Verify.userData, dbentry.delete);
 export default router;
+
