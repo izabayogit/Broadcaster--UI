@@ -59,7 +59,7 @@ class Register {
       if (!rows) {
         return res.status(400).send({ message: 'The credentials you provided is incorrect' });
       }
-      return res.status(200).send({
+      return res.status(200).json({
         status: 200,
         message: 'user loged in successfully',
         data: {
