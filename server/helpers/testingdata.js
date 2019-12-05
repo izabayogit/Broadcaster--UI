@@ -51,3 +51,19 @@ export const values = [
    '0785675898',
  ];
 
+ export const entitytext = `INSERT INTO entity(id, createdon,  createdby,  title, type, location, status,productimage, videos, comment)
+ VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+ RETURNING *`;
+
+export const entityValues = [
+    1,
+    '2019/12/05 23:08:33',
+    'testtoken',
+    'flood in kirehe',
+    'red-flag',
+    '-1.23345756, 2.5677888',
+    'pending',
+    'we want you to intervene',
+    'upload572e2fd2fcd41d7f9bebc694d6831427',
+    'uploadf2e33d1b41d847cf2be850cb17b6ffdb'
+  ];

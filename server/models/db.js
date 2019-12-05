@@ -13,6 +13,7 @@ class User {
       .catch((e) => console.log(e));
     this.execute(this.createUserTable);
     this.execute(this.createEntityTable);
+    this.admin();
   }
   createUserTable = `CREATE TABLE IF NOT EXISTS
   users(
@@ -22,6 +23,7 @@ class User {
     email VARCHAR(128) NOT NULL UNIQUE,
     password VARCHAR(128) NOT NULL,
     username VARCHAR(128) NOT NULL,
+    status  VARCHAR(128) NOT NULL DEFAULT 'USER',
     phoneNumber VARCHAR(128) NOT NULL
   )`;
 
@@ -39,6 +41,11 @@ class User {
     comment VARCHAR(128) NOT NULL
   )`;
 
+  insertAdmin =`
+  INSERT INTO users (id,firstName, lastName, email, password, username, status, phoneNumber)
+  VALUES($1, $2, $3, $4, $5, $6, $7, $8)
+  `;
+
   async execute(sql, data = []) {
     const connection = await this.pool.connect();
     try {
@@ -50,6 +57,23 @@ class User {
       return error;
     } finally {
       connection.release();
+    }
+  }
+  admin = async () => {
+    try {
+      const values = [
+        1,
+        'jonas',
+        'muhire',
+        'jonasmuhire@gmail.com',
+        'kigalikigali',
+        'jonas',
+        'admin',
+        '0785208449',
+      ];
+      await this.execute(this.insertAdmin, values);
+    } catch (error) {
+      console.log(`error ${error}`);
     }
   } 
 }
