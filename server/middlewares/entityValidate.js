@@ -27,8 +27,6 @@ const entityValidate = ( req, res, next ) => {
     };
     const result = Joi.validate( items, schema );
     if ( result.error ) {
-      console.log(req.body.comment);
-      console.log(result.error);
       return res.status( 400 ).send( {
         status: 400,
         error: 'please fill the form correctly',

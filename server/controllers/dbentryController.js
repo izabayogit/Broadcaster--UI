@@ -1,4 +1,3 @@
-
 import date from 'date-and-time';
 import db from '../models/db';
 
