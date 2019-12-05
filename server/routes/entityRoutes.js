@@ -11,4 +11,5 @@ const pathy = upload.array('files', 4);
 router.post( '/entry', Verify.userData, pathy, entityValidate, dbentry.create );
 router.patch('/red-flags/:id', Verify.userData, pathy, dbentry.update );
 router.get('/red-flags', Verify.userData, dbentry.getAll);
+router.get('/red-flags/:id', Verify.userData, dbentry.getOne);
 export default router;

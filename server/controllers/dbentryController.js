@@ -111,6 +111,22 @@ class Register {
         return res.status(400).send(error.message);
       }
     }
+    getOne = async (req, res) => {
+      const text = 'SELECT * FROM entity WHERE id = $1 ';
+      try {
+        const { rows } = await db.execute(text, [req.params.id]);
+        if (!rows[0]) {
+          return res.status(404).send({
+            status: 404,
+            error: 'red-flag with a given ID was not found',
+          });
+        }
+        return res.status(200).send(rows[0]);
+      } catch (error) {
+        return res.status(400).send(error.message);
+      }
+    }
+
 
 }
 export default new Register();
