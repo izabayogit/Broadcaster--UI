@@ -28,7 +28,7 @@ class Register {
        const tokenData = generateToken( newUser.id, newUser.email );
        const { password, ...finalUser } = newUser;
 
-       return res.status(201).send(
+       return res.status(201).json(
          {
            status: 201,
            message: 'user created successfully',
