@@ -341,20 +341,6 @@ describe('     ', ()=>{
                       done();
                   });
               });
-              it('should return error when red-flags does not exist', (done) => {
-                chai.request(server)
-                    .patch('/api/v2/admin/1')
-                    .set('Content-Type', 'application/form-data')
-                    .set('token', adminToken)
-                    .end( (err, res) => {
-                        if (err) {
-                          console.log(err)
-                        } else {
-                          expect(res.status).to.equal(400);
-                        }
-                        done();
-                    });
-                });
                 it('should return one red-flags', (done) => {
                   chai.request(server)
                       .delete('/api/v2/red-flags/1')
