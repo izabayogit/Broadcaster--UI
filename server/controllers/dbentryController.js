@@ -127,6 +127,24 @@ class Register {
       }
     }
 
+    delete = async (req, res) => {
+      const deleteQuery = 'DELETE FROM entity WHERE id=$1 returning *';
+      try {
+        const { rows } = await db.execute(deleteQuery, [req.params.id]);
+        if (!rows[0]) {
+          return res.status(404).send({
+            status: 404,
+            error: 'red-flag with a given ID was not found',
+          });
+        }
+        return res.status(200).send({
+          status: 200,
+          message: 'red-flag has been deleted',
+        });
+      } catch (error) {
+        return res.status(400).send(error.message);
+      }
+    }
 
 }
 export default new Register();
