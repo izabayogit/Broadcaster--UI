@@ -1,12 +1,23 @@
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import dotenv from 'dotenv';
-
+import db from '../models/db';
 
 dotenv.config();
 
 class Verify {
- userData = ( req, res, next ) => {
+  admin = (req, res, next) => {
+    const { status } = req.currentUser;
+    if (status !== 'admin') {
+      return res.status(403).send({
+        status: 403,
+        error: 'you are not an admin',
+      });
+    }
+    next();
+  }
+
+ userData = async ( req, res, next ) => {
    try {
      const token = req.header( 'token' );
      if ( !token ) {
@@ -16,14 +27,17 @@ class Verify {
        } );
      }
      const tokenData = jwt.verify( token, process.env.password );
-     const User = user.findUser( tokenData.userId);
-     if (!User) {
+
+     const findAllQuery = 'SELECT * FROM users where id = $1';
+
+     const { rows } = await db.execute(findAllQuery, [tokenData.userId]);
+     if (!rows[0]) {
        return res.status( 404 ).send( {
          status: 404,
          error: 'user with this token does not exist ',
        } );
      }
-     req.currentuser = User.id;
+     req.currentuser = rows[0].firstname;
      next();
    } catch (error) {
      return res.status( 401 ).send( {
@@ -32,5 +46,17 @@ class Verify {
      } );
    }
  }
+
+    handleImage = (req, res, next) => {
+      multer.diskStorage({
+        destination: (file, cb) => {
+          cb(null, './uploads/');
+        },
+        filename: ( file, cb) => {
+          cb(null, new Date().toISOString() + file.originalname);
+        },
+      });
+      next();
+    }
 }
 export default new Verify();
