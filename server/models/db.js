@@ -1,9 +1,8 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
 import 'idempotent-babel-polyfill';
-
-
 dotenv.config();
+
 class User {
   constructor() {
     this.pool = new Pool({
@@ -15,7 +14,6 @@ class User {
     this.execute(this.createUserTable);
     this.execute(this.createEntityTable);
   }
-
   createUserTable = `CREATE TABLE IF NOT EXISTS
   users(
     id SERIAL NOT NULL PRIMARY KEY,
@@ -41,8 +39,6 @@ class User {
     comment VARCHAR(128) NOT NULL
   )`;
 
- 
-
   async execute(sql, data = []) {
     const connection = await this.pool.connect();
     try {
@@ -55,8 +51,6 @@ class User {
     } finally {
       connection.release();
     }
-  }
-
- 
+  } 
 }
 export default new User();

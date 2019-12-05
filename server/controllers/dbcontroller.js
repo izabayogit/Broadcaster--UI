@@ -1,7 +1,5 @@
 import db from '../models/db';
 import generateToken from '../helpers/token';
-
-
 class Register {
    create = async (req, res) => {
      const text = `INSERT INTO users ( firstName, lastName, email, password, username, phoneNumber)
@@ -19,7 +17,7 @@ class Register {
      try {
        const data = await db.execute(text, values);
        if (data.routine === '_bt_check_unique') {
-         return res.status(409).send(
+         return res.status(409).json(
            {
              status: 409,
              error: data.detail,
@@ -30,7 +28,7 @@ class Register {
        const tokenData = generateToken( newUser.id, newUser.email );
        const { password, ...finalUser } = newUser;
 
-       return res.status(201).send(
+       return res.status(201).json(
          {
            status: 201,
            message: 'user created successfully',
@@ -41,14 +39,14 @@ class Register {
          },
        );
      } catch (error) {
-       return res.status(400).send(error);
+       return res.status(400).json(error);
      }
    }
 
    // eslint-disable-next-line class-methods-use-this
    async login(req, res) {
     if (!req.body.email || !req.body.password) {
-      return res.status(400).send({ message: 'Some values are missing' });
+      return res.status(400).json({ message: 'Some values are missing' });
     }
 
     const text = 'SELECT * FROM users WHERE email = $1 AND password= $2';
@@ -57,7 +55,7 @@ class Register {
 
       const token = generateToken( rows[0].id, rows[0].email );
       if (!rows) {
-        return res.status(400).send({ message: 'The credentials you provided is incorrect' });
+        return res.status(400).json({ message: 'The credentials you provided is incorrect' });
       }
       return res.status(200).json({
         status: 200,
@@ -67,7 +65,7 @@ class Register {
         },
       });
     } catch (error) {
-      return res.status(401).send({
+      return res.status(401).json({
         status: 401,
         error: 'incorrect email or password',
       });
