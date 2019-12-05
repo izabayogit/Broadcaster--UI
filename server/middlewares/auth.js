@@ -6,7 +6,7 @@ import db from '../models/db';
 dotenv.config();
 class Verify {
   admin = (req, res, next) => {
-    const { status } = req.currentUser;
+    const { status } = req.user;
     if (status !== 'admin') {
       return res.status(403).json({
         status: 403,
@@ -36,6 +36,7 @@ class Verify {
          error: 'user with this token does not exist ',
        } );
      }
+     req.user = rows[0];
      req.currentuser = rows[0].firstname;
      next();
    } catch (error) {

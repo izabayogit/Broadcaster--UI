@@ -26,7 +26,7 @@ class Register {
       try {
         const data = await db.execute(text, values);
         if (!data) {
-          return res.status(400).json({ message: 'no data provided' });
+          return res.status(400).json(error.message);
         }
         const newUser = data.rows
         return res.status(201).json(
@@ -132,6 +132,38 @@ class Register {
         return res.status(400).json(error.message);
       }
     }
+    adminUpdate = async (req, res) => {
+      const findOneQuery = 'SELECT * FROM entity WHERE id=$1 ';
+      const updateOneQuery = `UPDATE entity
+       SET  status= $1
+       WHERE id=$2 returning *`;
+      try {
+        const { rows } = await db.execute(findOneQuery, [req.params.id]);
+        if (!rows[0]) {
+          return res.status(404).json({
+            status: 404,
+            error: 'red-flag with a given id was not found',
+          });
+        }
+
+        const values = [
+          req.body.status,
+          req.params.id,
+        ];
+        const response = await db.execute(updateOneQuery, values);
+        const data = response.rows[0];  
+        return res.status(200).json({
+          status: 200,
+          message: 'status updated succesfully',
+          data:{
+           data
+          }
+        });
+      } catch (err) {
+        return res.status(400).json(err.message);
+      }
+    }
+
 
 }
 export default new Register();

@@ -5,7 +5,7 @@ import chaiHttp from 'chai-http';
 import server from '../index';
 import user from '../models/db';
 import generateToken from '../helpers/token';
-import { mocks, values, text }  from '../helpers/testingdata'
+import { mocks, values, text, entityValues, entitytext }  from '../helpers/testingdata'
 
 const { expect } = chai;
 chai.use(chaiHttp);
@@ -22,7 +22,6 @@ describe( ' sign up', () => {
       .set('accept', 'application/json')
       .send(mocks.newUser)
       .end((err, res) => {
-        const testid = res.body.data.id;
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(201);
         expect(res.body.message).to.equal('user created successfully');
@@ -98,10 +97,12 @@ describe( ' sign in', () => {
 
 const token = generateToken(0, mocks.wrongUser.email )
 const userToken = generateToken(20, 'izabayotoken@gmail.com' )
+const adminToken = generateToken(1, 'izabayojonas@gmail.com' )
 describe('token',()=>{
   before('clear a database', (done) => {
     chai.request(server);
     user.execute(text, values);
+    user.execute(entitytext, entityValues);
     done();
   });
     it ( 'verification',(done)=>{
@@ -132,6 +133,7 @@ describe('     ', ()=>{
   before('clear a database', (done) => {
     chai.request(server);
     user.execute(text, values);
+    user.execute(entitytext, entityValues);
     done();
   });
 
@@ -243,9 +245,29 @@ describe('     ', ()=>{
               done();
           });
       });
-
-
-
+      it('successful update red-flags', (done) => {
+        chai.request(server)
+            .patch('/api/v2/red-flags/1')
+            .set('Content-Type', 'application/form-data')
+            .set('token', userToken)
+            .field('title', 'flood in kirehe')
+            .field('type', 'red-flag')
+            .field('location', '-1.23345756, 2.5677888')
+            .field('status', 'pending')
+            .attach('files', fs.readFileSync(path.join(__dirname, '../../../Broadcaster--UI/upload/1.png')), '1.png')
+            .attach('files', fs.readFileSync(path.join(__dirname, '../../../Broadcaster--UI/upload/2.png')), '2.png')
+            .field('comment', 'we want you to intervene')
+            .end( (err, res) => {
+                if (err) {
+                  console.log(err)
+                } else {
+                  expect(res.body).to.be.an('object');
+                  expect(res.status).to.equal(200);
+                  expect(res.body.message).to.equal('red-flag updated succesfully');
+                }
+                done();
+            });
+        });
 
       it('should return all red-flags', (done) => {
         chai.request(server)
@@ -261,9 +283,6 @@ describe('     ', ()=>{
                 done();
             });
         });  
-
-
-
         it('should return one red-flags', (done) => {
           chai.request(server)
               .get('/api/v2/red-flags/0')
@@ -278,6 +297,20 @@ describe('     ', ()=>{
                   done();
               });
           });  
+          it('should return one red-flags', (done) => {
+            chai.request(server)
+                .get('/api/v2/red-flags/1')
+                .set('token', userToken)
+                .end( (err, res) => {
+                    if (err) {
+                      console.log(err)
+                    } else {
+                      expect(res.status).to.equal(200);
+                     expect(res.body).to.be.an('object')
+                    }
+                    done();
+                });
+            }); 
 
           it('should return one red-flags', (done) => {
             chai.request(server)
@@ -293,5 +326,19 @@ describe('     ', ()=>{
                     done();
                 });
             }); 
+                it('should return one red-flags', (done) => {
+                  chai.request(server)
+                      .delete('/api/v2/red-flags/1')
+                      .set('token', userToken)
+                      .end( (err, res) => {
+                          if (err) {
+                            console.log(err)
+                          } else {
+                            expect(res.status).to.equal(200);
+                           expect(res.body.message).to.equal('red-flag has been deleted')
+                          }
+                          done();
+                      });
+                  }); 
   });
 
