@@ -13,6 +13,7 @@ class User {
       .then(() => console.log('connected'))
       .catch((e) => console.log(e));
     this.execute(this.createUserTable);
+    this.execute(this.createEntityTable);
   }
 
   createUserTable = `CREATE TABLE IF NOT EXISTS
@@ -25,6 +26,22 @@ class User {
     username VARCHAR(128) NOT NULL,
     phoneNumber VARCHAR(128) NOT NULL
   )`;
+
+  createEntityTable = `CREATE TABLE IF NOT EXISTS
+  entity(
+    id SERIAL NOT NULL PRIMARY KEY,
+    createdon VARCHAR(128) NOT NULL,
+    createdby VARCHAR(128)  NOT NULL,
+    title VARCHAR(128) NOT NULL ,
+    type VARCHAR(128) NOT NULL,
+    location VARCHAR(128) NOT NULL,
+    status VARCHAR(128) NOT NULL,
+    productimage VARCHAR(128) NOT NULL,
+    videos VARCHAR(128) NOT NULL,
+    comment VARCHAR(128) NOT NULL
+  )`;
+
+ 
 
   async execute(sql, data = []) {
     const connection = await this.pool.connect();
@@ -39,5 +56,7 @@ class User {
       connection.release();
     }
   }
+
+ 
 }
 export default new User();
