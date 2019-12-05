@@ -14,6 +14,7 @@ class Register {
       const videos = files[1].path;
       const createdBy = req.currentuser;
       const values = [
+
         currentDate,
         createdBy,
         req.body.title,
@@ -28,7 +29,7 @@ class Register {
         const data = await db.execute(text, values);
 
         if (!data) {
-          return res.status(400).json(error.message);
+          return res.status(400).json({ message: 'no data provided' });
         }
         const newUser = data.rows;
         return res.status(201).json(
@@ -36,7 +37,9 @@ class Register {
             status: 201,
             message: 'red-flag created successfully',
             data: {
-             newUser,
+              
+              newUser,
+
             },
           },
         );
@@ -48,7 +51,7 @@ class Register {
       const findOneQuery = 'SELECT * FROM entity WHERE id=$1 ';
       const updateOneQuery = `UPDATE entity
        SET createdon=$1, createdby=$2,title=$3,type=$4,location=$5, status= $6, productimage= $7, videos= $8, comment= $9
-       WHERE id=$10  returning *`;    
+       WHERE id=$10  returning *`;
       const { files } = req;
       const productImage = files[0].path;
       const videos = files[1].path;
@@ -72,9 +75,11 @@ class Register {
           productImage,
           videos,
           req.params.id,
+
         ];
         const response = await db.execute(updateOneQuery, values);
-        const data = response.rows[0];      
+        const data = response.rows[0];
+        
         return res.status(200).json({
           status: 200,
           message: 'red-flag updated succesfully',
@@ -86,7 +91,6 @@ class Register {
         return res.status(400).json(err.message);
       }
     }
-
     getAll = async (req, res) => {
       const findAllQuery = 'SELECT * FROM entity ';
       try {
@@ -96,6 +100,23 @@ class Register {
         return res.status(400).json(error.message);
       }
     }
+    getOne = async (req, res) => {
+      const text = 'SELECT * FROM entity WHERE id = $1 ';
+      try {
+        const { rows } = await db.execute(text, [req.params.id]);
+        if (!rows[0]) {
+          return res.status(404).json({
+            status: 404,
+            error: 'red-flag with a given ID was not found',
+          });
+        }
+        return res.status(200).json(rows[0]);
+      } catch (error) {
+        return res.status(400).json(error.message);
+      }
+    }
+
+
 }
 export default new Register();
 
