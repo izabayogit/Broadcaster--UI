@@ -1,7 +1,5 @@
 import db from '../models/db';
 import generateToken from '../helpers/token';
-
-
 class Register {
    create = async (req, res) => {
      const text = `INSERT INTO users ( firstName, lastName, email, password, username, phoneNumber)

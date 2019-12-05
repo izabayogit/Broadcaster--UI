@@ -1,3 +1,4 @@
+
 import express from 'express';
 import multer from 'multer';
 import Verify from '../middlewares/auth';
@@ -11,3 +12,5 @@ router.post( '/red-flags', Verify.userData, pathy, entityValidate, dbentry.creat
 router.patch('/red-flags/:id', Verify.userData, pathy, dbentry.update );
 router.get('/red-flags', Verify.userData, dbentry.getAll);
 export default router;
+
+
