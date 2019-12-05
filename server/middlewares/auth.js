@@ -1,11 +1,9 @@
 
 import jwt from 'jsonwebtoken';
-import multer from 'multer';
 import dotenv from 'dotenv';
 import db from '../models/db';
 
 dotenv.config();
-
 class Verify {
   admin = (req, res, next) => {
     const { status } = req.currentUser;
@@ -47,8 +45,6 @@ class Verify {
      } );
    }
  }
-    
 }
 export default new Verify();
-
 

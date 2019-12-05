@@ -39,10 +39,9 @@ class Register {
          },
        );
      } catch (error) {
-       return res.status(400).json(error);
+       return res.status(400).json(error.message);
      }
    }
-
    // eslint-disable-next-line class-methods-use-this
    async login(req, res) {
     if (!req.body.email || !req.body.password) {

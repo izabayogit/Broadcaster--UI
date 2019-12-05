@@ -14,7 +14,6 @@ class Register {
       const videos = files[1].path;
       const createdBy = req.currentuser;
       const values = [
-
         currentDate,
         createdBy,
         req.body.title,
@@ -27,12 +26,12 @@ class Register {
       ];
       try {
         const data = await db.execute(text, values);
-
         if (!data) {
           return res.status(400).json({ message: 'no data provided' });
         }
-        const newUser = data.rows;
+        const newUser = data.rows
         return res.status(201).json(
+
           {
             status: 201,
             message: 'red-flag created successfully',
@@ -46,7 +45,7 @@ class Register {
       } catch (error) {
         return res.status(400).json(error.message);
       }
-    }
+    }  
     update = async (req, res) => {
       const findOneQuery = 'SELECT * FROM entity WHERE id=$1 ';
       const updateOneQuery = `UPDATE entity
@@ -64,6 +63,7 @@ class Register {
             error: 'red-flag with a given id was not found',
           });
         }
+
         const values = [
           currentDate,
           createdBy,
@@ -75,11 +75,9 @@ class Register {
           productImage,
           videos,
           req.params.id,
-
         ];
         const response = await db.execute(updateOneQuery, values);
-        const data = response.rows[0];
-        
+        const data = response.rows[0];  
         return res.status(200).json({
           status: 200,
           message: 'red-flag updated succesfully',
@@ -91,6 +89,7 @@ class Register {
         return res.status(400).json(err.message);
       }
     }
+
     getAll = async (req, res) => {
       const findAllQuery = 'SELECT * FROM entity ';
       try {
@@ -116,7 +115,27 @@ class Register {
       }
     }
 
+    delete = async (req, res) => {
+      const deleteQuery = 'DELETE FROM entity WHERE id=$1 returning *';
+      try {
+        const { rows } = await db.execute(deleteQuery, [req.params.id]);
+        if (!rows[0]) {
+          return res.status(404).json({
+            status: 404,
+            error: 'red-flag with a given ID was not found',
+          });
+        }
+        return res.status(200).json({
+          status: 200,
+          message: 'red-flag has been deleted',
+        });
+      } catch (error) {
+        return res.status(400).json(error.message);
+      }
+    }
 
 }
 export default new Register();
+
+
 

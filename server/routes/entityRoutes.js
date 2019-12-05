@@ -3,7 +3,7 @@ import express from 'express';
 import multer from 'multer';
 import Verify from '../middlewares/auth';
 import entityValidate from '../middlewares/entityValidate';
-import dbentry from '../controllers/dbentryController'
+import dbentry from '../controllers/dbentryController';
 
 const router = express.Router();
 const upload = multer({ dest: 'upload/' });
@@ -12,5 +12,6 @@ router.post( '/red-flags', Verify.userData, pathy, entityValidate, dbentry.creat
 router.patch('/red-flags/:id', Verify.userData, pathy, dbentry.update );
 router.get('/red-flags', Verify.userData, dbentry.getAll);
 router.get('/red-flags/:id', Verify.userData, dbentry.getOne);
+router.delete('/red-flags/:id', Verify.userData, dbentry.delete);
 export default router;
 
