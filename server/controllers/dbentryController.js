@@ -55,5 +55,51 @@ class Register {
     }
 
    
+    update = async (req, res) => {
+      const findOneQuery = 'SELECT * FROM entity WHERE id=$1 ';
+      const updateOneQuery = `UPDATE entity
+       SET createdon=$1, createdby=$2,title=$3,type=$4,location=$5, status= $6, productimage= $7, videos= $8, comment= $9
+       WHERE id=$10  returning *`;
+      console.log(req.file);
+      const { files } = req;
+      const productImage = files[0].path;
+      const videos = files[1].path;
+      const createdBy = req.currentuser;
+      try {
+        const { rows } = await db.execute(findOneQuery, [req.params.id]);
+        if (!rows[0]) {
+          return res.status(404).send({
+            status: 404,
+            error: 'red-flag with a given id was not found',
+          });
+        }
+
+        const values = [
+          currentDate,
+          createdBy,
+          req.body.title,
+          req.body.type,
+          req.body.location,
+          req.body.status,
+          req.body.comment,
+          productImage,
+          videos,
+          req.params.id,
+
+        ];
+        const response = await db.execute(updateOneQuery, values);
+        const data = response.rows[0];
+        
+        return res.status(200).send({
+          status: 200,
+          message: 'red-flag updated succesfully',
+          data:{
+           data
+          }
+        });
+      } catch (err) {
+        return res.status(400).send(err.message);
+      }
+    }
 }
 export default new Register();

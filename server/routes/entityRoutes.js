@@ -9,5 +9,5 @@ const router = express.Router();
 const upload = multer({ dest: 'upload/' });
 const pathy = upload.array('files', 4);
 router.post( '/entry', Verify.userData, pathy, entityValidate, dbentry.create );
-
+router.patch('/red-flags/:id', Verify.userData, pathy, dbentry.update );
 export default router;
