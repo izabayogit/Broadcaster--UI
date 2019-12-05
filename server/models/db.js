@@ -14,7 +14,6 @@ class User {
     this.execute(this.createUserTable);
     this.execute(this.createEntityTable);
   }
-
   createUserTable = `CREATE TABLE IF NOT EXISTS
   users(
     id SERIAL NOT NULL PRIMARY KEY,
@@ -52,6 +51,6 @@ class User {
     } finally {
       connection.release();
     }
-  }
+  } 
 }
 export default new User();

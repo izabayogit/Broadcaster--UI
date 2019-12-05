@@ -46,6 +46,5 @@ class Verify {
      } );
    }
  }
-
 }
 export default new Verify();

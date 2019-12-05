@@ -2,6 +2,7 @@ import date from 'date-and-time';
 import db from '../models/db';
 const now = new Date();
 const currentDate = date.format( now, 'YYYY/MM/DD HH:mm:ss' );
+
 class Register {
     create = async (req, res) => {
       const text = `INSERT INTO entity( createdon,  createdby,  title, type, location, status,productimage, videos, comment)
@@ -12,13 +13,15 @@ class Register {
       const videos = files[1].path;
       const createdBy = req.currentuser;
       const values = [
+
+
         currentDate,
         createdBy,
         req.body.title,
         req.body.type,
         req.body.location,
         req.body.status,
-        req.body.comment,
+        req.bod
         productImage,
         videos,
       ];
@@ -39,6 +42,7 @@ class Register {
           },
         );
       } catch (error) {
+
         return res.status(400).json(error.message);
       }
     }
@@ -86,5 +90,6 @@ class Register {
         return res.status(400).json(err.message);
       }
     }
+  
 }
 export default new Register();
